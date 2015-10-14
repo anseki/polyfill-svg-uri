@@ -1,0 +1,30 @@
+{
+  "name": "polyfill-svg-uri",
+  "version": "0.1.0",
+  "title": "polyfillSvgUri",
+  "description": "Polyfill for plain SVG as Data URI scheme.",
+  "keywords": [
+    "polyfill",
+    "svg",
+    "data-uri-scheme",
+    "css",
+    "style",
+    "background",
+    "img",
+    "iframe",
+    "src",
+    "ie",
+    "firefox"
+  ],
+  "homepage": "http://anseki.github.io/polyfill-svg-uri/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anseki/polyfill-svg-uri.git"
+  },
+  "bugs": "https://github.com/anseki/polyfill-svg-uri/issues",
+  "license": "MIT",
+  "author": {
+    "name": "anseki",
+    "url": "https://github.com/anseki"
+  }
+}
