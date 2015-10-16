@@ -116,6 +116,9 @@ function polyfillSvgUri() {
         if (properties.indexOf('color') === -1) {
           properties = Object.keys(document.body.style);
           checkProto = document.body.style;
+          if (properties.indexOf('color') === -1) {
+            properties = Object.keys(global.getComputedStyle(document.body, ''));
+          }
         }
       }
 
@@ -205,8 +208,15 @@ function polyfillSvgUri() {
       if (!htmlElementProto ||
         !HTMLElement.prototype.isPrototypeOf(htmlElementProto)) { return; }
 
+      /*
+        If the DOM prototype doesn't have these properties (e.g. old Chrome, etc.),
+        it can't set descriptor.
+        https://developers.google.com/web/updates/2015/04/DOM-attributes-now-on-the-prototype-chain
+        But, those may be able to parse SVG.
+      */
+
       ['src', 'data'].forEach(function(propName) {
-        if (!htmlElementProto.hasOwnProperty(propName)) { return; }
+        // if (!htmlElementProto.hasOwnProperty(propName)) { return; }
 
         (function(descriptor) {
           if (!descriptor || !descriptor.set) { return; }
