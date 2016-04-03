@@ -16,7 +16,7 @@
     "ie",
     "firefox"
   ],
-  "homepage": "http://anseki.github.io/polyfill-svg-uri/",
+  "homepage": "https://github.com/anseki/polyfill-svg-uri/",
   "repository": {
     "type": "git",
     "url": "git://github.com/anseki/polyfill-svg-uri.git"
