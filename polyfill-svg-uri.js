@@ -63,7 +63,13 @@ function polyfillSvgUri() {
   list2array(document.styleSheets).forEach(function(styleSheet) {
     try {
       list2array(styleSheet.cssRules).forEach(function(cssRule) {
-        parseStyle(cssRule.style);
+        if (cssRule.type === 4) {
+          list2array(cssRule.cssRules).forEach(function(mediaCssRule) {
+            parseStyle(mediaCssRule.style);
+          });
+        } else {
+          if (cssRule.style) parseStyle(cssRule.style);
+        }
       });
     } catch (e) {
       global.console.warn('Couldn\'t get cssRules.', e, styleSheet);
