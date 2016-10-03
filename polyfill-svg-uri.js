@@ -49,12 +49,18 @@
     }
 
     function parseStyle(style) {
-      var name, value, i;
+      var propName, value, newValue, i;
       for (i = style.length - 1; i >= 0; i--) {
-        name = style[i];
-        if ((value = style.getPropertyValue(name))) {
-          style.setProperty(name, convertCssValue(value),
-            style.getPropertyPriority(name));
+        propName = style[i];
+        if ((value = style.getPropertyValue(propName)) &&
+            // Blink has a bug that break the style when some properties are updated.
+            // https://bugs.chromium.org/p/chromium/issues/detail?id=652362
+            (newValue = convertCssValue(value)) !== value) {
+          try {
+            style.setProperty(propName, newValue, style.getPropertyPriority(propName));
+          } catch (e) {
+            global.console.warn('Couldn\'t set property.', e, propName);
+          }
         }
       }
     }
