@@ -1,5 +1,7 @@
 # polyfillSvgUri
 
+[![npm](https://img.shields.io/npm/v/polyfill-svg-uri.svg)](https://www.npmjs.com/package/polyfill-svg-uri) [![GitHub issues](https://img.shields.io/github/issues/anseki/polyfill-svg-uri.svg)](https://github.com/anseki/polyfill-svg-uri/issues) [![dependencies](https://img.shields.io/badge/dependencies-No%20dependency-brightgreen.svg)](package.json) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE-MIT)
+
 Polyfill for plain SVG as Data URI scheme.
 
 The plain SVG without encoding (e.g. Base64, URL encoding, etc.) that is written in the [Data URI scheme](http://tools.ietf.org/html/rfc2397) is easy to read, easy to edit and small size.  
