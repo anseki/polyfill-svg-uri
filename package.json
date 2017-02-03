@@ -1,6 +1,6 @@
 {
   "name": "polyfill-svg-uri",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "title": "polyfillSvgUri",
   "description": "Polyfill for plain SVG as Data URI scheme.",
   "keywords": [
