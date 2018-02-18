@@ -16,6 +16,12 @@
     "ie",
     "firefox"
   ],
+  "main": "polyfill-svg-uri.min.js",
+  "files": [
+    "polyfill-svg-uri.min.js",
+    "bower.json",
+    "LICENSE-MIT"
+  ],
   "homepage": "https://github.com/anseki/polyfill-svg-uri/",
   "repository": {
     "type": "git",
