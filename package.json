@@ -19,8 +19,7 @@
   "main": "polyfill-svg-uri.min.js",
   "files": [
     "polyfill-svg-uri.min.js",
-    "bower.json",
-    "LICENSE-MIT"
+    "bower.json"
   ],
   "homepage": "https://github.com/anseki/polyfill-svg-uri/",
   "repository": {
