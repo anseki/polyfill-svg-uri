@@ -70,12 +70,21 @@
         Normally, doesn't have multiple properties of following.
         But unknown type should be covered. i.e. Don't use `else if`.
       */
+
       // CSSStyleDeclaration
-      if (cssRule.style) { parseStyle(cssRule.style); }
+      try {
+        if (cssRule.style) { parseStyle(cssRule.style); }
+      } catch (error) { /* ignore */ }
+
       // CSSStyleSheet, CSSMediaRule, CSSKeyframesRule, etc.
-      if (cssRule.cssRules) { list2array(cssRule.cssRules).forEach(parseRule); }
+      try {
+        if (cssRule.cssRules) { list2array(cssRule.cssRules).forEach(parseRule); }
+      } catch (error) { /* ignore */ }
+
       // CSSImportRule
-      if (cssRule.styleSheet) { parseRule(cssRule.styleSheet); }
+      try {
+        if (cssRule.styleSheet) { parseRule(cssRule.styleSheet); }
+      } catch (error) { /* ignore */ }
     }
 
     // ================================ Style Sheets
